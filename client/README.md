@@ -42,3 +42,7 @@ app.use("/api/user", userRouter)
 then check it in localhost to see if it works, localhost:3000/api/user/test
 
 inside the api folder create a sub folder called controller, inside the controller folder, i created a file and inside the file i exported a test controller and imported it into user.routes 
+
+8. Creating the signup api route. getting information from the clinent like the username, email and password side and hashing the passwrod saving it in the database.
+i. created a file in the routes folder, auth.route.js
+<!-- to has password use bcryptjs -->
