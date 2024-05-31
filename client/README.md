@@ -54,3 +54,4 @@ i. created a file in the routes folder, auth.route.js
 i. checks for 4 things, error sent to the middlewere, request from the client side, respose from the server to the clientside and next is to the next middleware
 Also created a utils folder in the
 9. signup page ui
+10. signup page functionality
