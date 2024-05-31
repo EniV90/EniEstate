@@ -36,7 +36,7 @@ const SignUp = () => {
       setLoading(false);
       setError(null);
       // after signing up use navigate to navigate into the sign in page
-      navigate('/sign-in')
+      navigate("/sign-in");
     } catch (error) {
       setLoading(false);
       setError(error.message);
@@ -82,6 +82,7 @@ const SignUp = () => {
           <span className="text-blue-700">Sign in</span>
         </Link>
       </div>
+      {error && <p className="text-red-500 mt-5">{error}</p>}
     </div>
   );
 };

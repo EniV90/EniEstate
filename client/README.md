@@ -57,4 +57,10 @@ Also created a utils folder in the
 10. signup page functionality
 11. sign-in api route
 i. installed jwt (jsonwebtoken) to harsh
-ii. httpOnly: true means no other thirdparty application can have access to the cookie 
+ii. httpOnly: true means no other thirdparty application can have access to the cookie
+
+if the email exist get the email, if it's not available return an 404 "error not found"
+ if the valid user exist we want to check the pssword if the password is correct we want to return true otherwise false, and the way we do that is by using bcrypt , install it then use it like this bcrypt.comparesync  and if it's not valid return an error "wrong credentials with status code 401 and if everything is working fine we have to sign a token  using a package called jwt to save the credentials. we have to pass something unique about the user which is an "id" and also a JWT_SECRET key. and we save it in a cookie.
+
+// when sending back valid user, remove password by destructuring it
+// like this "  const { password: pass, ...rest } = validUser._doc"
