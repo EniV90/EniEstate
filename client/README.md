@@ -55,3 +55,6 @@ i. checks for 4 things, error sent to the middlewere, request from the client si
 Also created a utils folder in the
 9. signup page ui
 10. signup page functionality
+11. sign-in api route
+i. installed jwt (jsonwebtoken) to harsh
+ii. httpOnly: true means no other thirdparty application can have access to the cookie 
