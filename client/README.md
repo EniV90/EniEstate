@@ -64,3 +64,5 @@ if the email exist get the email, if it's not available return an 404 "error not
 
 // when sending back valid user, remove password by destructuring it
 // like this "  const { password: pass, ...rest } = validUser._doc"
+
+12. added redux and redux persist, fixed rerender issues
