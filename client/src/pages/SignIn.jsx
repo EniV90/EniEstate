@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
@@ -11,7 +12,10 @@ import {
 
 const SignIn = () => {
   const [formData, setFormData] = useState({});
+  const state = useSelector((state) => state)
+console.log(state);
   const { loading, error } = useSelector((state) => state.user);
+ 
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleChange = (e) => {
