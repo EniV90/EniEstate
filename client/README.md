@@ -66,3 +66,5 @@ if the email exist get the email, if it's not available return an 404 "error not
 // like this "  const { password: pass, ...rest } = validUser._doc"
 
 12. added redux and redux persist, fixed rerender issues
+13. added oauth google signin and signup
+14. update the header and make the profile page private
