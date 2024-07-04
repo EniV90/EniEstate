@@ -15,7 +15,7 @@ const CreateListing = () => {
   const navigate = useNavigate();
   const { currentUser } = useSelector((state) => state.user);
   const [formData, setFormData] = useState({
-    imagesUrls: [],
+    imageUrls: [],
     name: "",
     description: "",
     address: "",
@@ -34,7 +34,7 @@ const CreateListing = () => {
   const [loading, setLoading] = useState(false);
   console.log(formData);
   const handleImageSubmit = () => {
-    if (files.length > 0 && files.length + formData.imagesUrls.length < 7) {
+    if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
       setUploading(true);
       setImageUploadError(false);
       const promises = [];
@@ -46,7 +46,7 @@ const CreateListing = () => {
         .then((urls) => {
           setFormData({
             ...formData,
-            imagesUrls: formData.imagesUrls.concat(urls),
+            imageUrls: formData.imageUrls.concat(urls),
           });
           setImageUploadError(false);
           setUploading(false);
@@ -89,7 +89,7 @@ const CreateListing = () => {
   const handleRemoveImage = (index) => {
     setFormData({
       ...formData,
-      imagesUrls: formData.imagesUrls.filter((_, i) => i !== index),
+      imageUrls: formData.imageUrls.filter((_, i) => i !== index),
     });
   };
 
@@ -127,7 +127,7 @@ const CreateListing = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      if (formData.imagesUrls.length < 1)
+      if (formData.imageUrls.length < 1)
         return setError("You must upload atleast one image");
       if (+formData.regularPrice < +formData.discountPrice)
         return setError("Discount price must be lower than Regular price");
@@ -319,7 +319,8 @@ const CreateListing = () => {
               className="p-3 border border-gray-300 rounded w-full"
               type="file"
               id="images"
-              accept="images/* multiple"
+              accept="images/*"
+              multiple
             />
             <button
               type="button"
@@ -333,8 +334,8 @@ const CreateListing = () => {
           <p className="text-red-700 text-sm">
             {imageUploadError && imageUploadError}
           </p>
-          {formData.imagesUrls.length > 0 &&
-            formData.imagesUrls.map((url, index) => (
+          {formData.imageUrls.length > 0 &&
+            formData.imageUrls.map((url, index) => (
               <div
                 key={url}
                 className="flex justify-between p-3 border items-center"
